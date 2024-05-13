@@ -33,9 +33,11 @@ export const signIn = async ({ email, password }: signInProps) => {
   }
 };
 
-export const signUp = async (userData: SignUpParams) => {
-  const { email, password, firstName, lastName } = userData;
+export const signUp = async ({ password, ...userData }: SignUpParams) => {
+  const { email, firstName, lastName } = userData;
+
   let newUserAccount;
+
   try {
     const { account, database } = await createAdminClient();
 
@@ -45,12 +47,16 @@ export const signUp = async (userData: SignUpParams) => {
       password,
       `${firstName} ${lastName}`
     );
+
     if (!newUserAccount) throw new Error("Error creating user");
+
     const dwollaCustomerUrl = await createDwollaCustomer({
       ...userData,
       type: "personal",
     });
+
     if (!dwollaCustomerUrl) throw new Error("Error creating Dwolla customer");
+
     const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl);
 
     const newUser = await database.createDocument(
@@ -73,7 +79,8 @@ export const signUp = async (userData: SignUpParams) => {
       sameSite: "strict",
       secure: true,
     });
-    return parseStringify(newUserAccount);
+
+    return parseStringify(newUser);
   } catch (error) {
     console.error("Error", error);
   }
