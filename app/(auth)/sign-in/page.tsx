@@ -8,5 +8,4 @@ const SignIn = () => {
     </section>
   );
 };
-
 export default SignIn;
