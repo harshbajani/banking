@@ -60,11 +60,7 @@ declare type Account = {
   type: string;
   subtype: string;
   appwriteItemId: string;
-<<<<<<< HEAD
   shareableId: string;
-=======
-  sharableId: string;
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
 };
 
 declare type Transaction = {
@@ -93,11 +89,7 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-<<<<<<< HEAD
   shareableId: string;
-=======
-  sharableId: string;
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
 };
 
 declare type AccountTypes =
@@ -211,11 +203,7 @@ declare interface BankTabItemProps {
   appwriteItemId?: string;
 }
 
-<<<<<<< HEAD
 declare interface TotalBalanceBoxProps {
-=======
-declare interface TotlaBalanceBoxProps {
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
   accounts: Account[];
   totalBanks: number;
   totalCurrentBalance: number;
@@ -223,10 +211,7 @@ declare interface TotlaBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
-<<<<<<< HEAD
-  type?: "mobile" | "desktop";
-=======
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
+  type?: 'mobile' | 'desktop'
 }
 
 declare interface RightSidebarProps {
@@ -329,11 +314,7 @@ declare interface createBankAccountProps {
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
-<<<<<<< HEAD
   shareableId: string;
-=======
-  sharableId: string;
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
 }
 
 declare interface getBanksProps {

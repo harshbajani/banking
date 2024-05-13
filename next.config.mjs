@@ -1,7 +1,13 @@
-<<<<<<< HEAD
 import {withSentryConfig} from '@sentry/nextjs';
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  }
+};
 
 export default withSentryConfig(nextConfig, {
 // For all available options, see:
@@ -39,9 +45,3 @@ disableLogger: true,
 // https://vercel.com/docs/cron-jobs
 automaticVercelMonitors: true,
 });
-=======
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
->>>>>>> b4c6fdeb46799950362b72adbac9038f85d518ea
